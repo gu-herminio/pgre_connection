@@ -21,7 +21,7 @@ public class PgreConnectionApplication implements CommandLineRunner {
 	public void run(String... args) {
 		// Criar uma nova pessoa
 		Person newPerson = new Person();
-		newPerson.setName("John Doe");
+		newPerson.setName("Vinicius Teste");
 
 		// Salvar a nova pessoa no banco de dados
 		repo.save(newPerson);
