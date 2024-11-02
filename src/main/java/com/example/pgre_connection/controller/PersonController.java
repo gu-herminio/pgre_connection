@@ -13,13 +13,17 @@ import org.springframework.web.client.RestTemplate;
 public class PersonController {
 
     @Autowired
-    PersonRepo repo;
+    PersonRepo repo; // Injeção de dependência
+
 
     @Autowired
-    RestTemplate restTemplate;
+    RestTemplate restTemplate; // Injeção de dependência
 
-    @PostMapping("/addPerson")
-    public void addPerson(@RequestBody Person person) {
+    @PostMapping("/addPerson") // Mapeia a URL /addPerson para este método, que é executado quando a URL é acessada.
+    public void addPerson(@RequestBody Person person) { // O método recebe um objeto Person como parâmetro, que é enviado no corpo da solicitação HTTP.
+                            // Esse @RequestBody é uma anotação do Spring que indica que o parâmetro do método deve ser vinculado ao corpo da solicitação HTTP.
+                                // O Spring converte automaticamente o corpo da solicitação em um objeto Person.
+
         // Salvar a pessoa no banco de dados
         repo.save(person);
 
